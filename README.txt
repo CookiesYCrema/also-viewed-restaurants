@@ -1,0 +1,2 @@
+\copy places(name, reviews, rating, price, "mainCategory", "subCategories", city, image) FROM 'C:/Users/mario/Documents/HR/HRLA23/SystemDesignCapstone/also-viewed-restaurants/data.csv' CSV HEADER;
+COPY mario.place(name, reviews, rating, price, "mainCategory", "subCategory", city, image) FROM 'data.csv' WITH HEADER=TRUE;

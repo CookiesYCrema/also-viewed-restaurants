@@ -10,3 +10,10 @@ javascript/
 # Dev Dependencies
 node_modules/
 client/dist/bundle.js
+
+#VSCODE
+.vscode
+
+#DATA SEED
+*.csv
+package-lock.json

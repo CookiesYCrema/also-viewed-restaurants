@@ -1,39 +1,30 @@
-const { Restaurant } = require('../db/model.js');
-const faker = require('faker');
+// const db = require('../db/postgres/')
+const { Place } = require('../db/postgres/model');
+const { PlaceC } = require('../db/cassandra/model');
 
 const controller = {
   get: (req, res) => {
-    const { mainCategory } = req.query;
-    console.log('req: ', mainCategory);
-    Restaurant.find({
-      // mainCategory: mainCategory
-      mainCategory: 'et'
-    }, (err, found) => {
-      if (err) {console.error('error getting data from db')}
-      else {
-        res.status(200).send(found);
-        console.log('retrieved data from db: ', found);
-      }
-    })
+    console.log(req.query)
+    res.status(200).send();
   },
   post: (req, res) => {
-    // const { name, categories } = req.body;
-    const e = req.body;
-    new Restaurant({
-      name: faker.lorem.words(3),
-      reviews: faker.random.number(10000),
-      rating: faker.random.number(5),
-      price: faker.random.number(4),
-      mainCategory: faker.lorem.words(1),
-      subCategories: faker.lorem.words(2),
-      city: faker.address.city(),
-      img: faker.image.food()
-    }).save((err, newRestaurant) => {
-      if (err) {console.error('error saving new restaurant to db')}
-      else {
-        res.status(201).send(newRestaurant);
-        console.log(newRestaurant);
-      }
+    Place.create({
+      name: req.body.name,
+      reviews: req.body.reviews,
+      rating: req.body.rating,
+      price: req.body.price,
+      mainCategory: req.body.mainCategory,
+      subCategory: req.body.subCategory,
+      city: req.body.city,
+      image: req.body.image
+    })
+    .then((place) => {
+      console.log('Creating place:', place)
+      res.status(201).send(place);
+    })
+    .catch(error => {
+      console.error('Error creating place', error);
+      res.status(400).send();
     });
   }
 }

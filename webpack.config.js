@@ -1,7 +1,6 @@
 var path = require('path');
 var SRC_DIR = path.join(__dirname, './client/src');
 var DIST_DIR = path.join(__dirname, './client/dist');
-// var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: `${SRC_DIR}/index.js`,
@@ -22,12 +21,7 @@ module.exports = {
       {
         test: /\.css$/,
         loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]' 
-      },
-      // {
-      //   "jest": {
-      //     "setupTestFrameworkScriptFile": "<rootDir>src/setupTests.js"
-      //   }
-      // }
+      }
     ],
   },
   resolve: {
