@@ -3,7 +3,7 @@ var connection = ExpressCassandra.createClient({
     clientOptions: {
         contactPoints: ['127.0.0.1'],
         protocolOptions: { port: 9042 },
-        keyspace: 'mario',
+        keyspace: 'alsoviewed',
         queryOptions: {consistency: ExpressCassandra.consistencies.one}
     },
     ormOptions: {

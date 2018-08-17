@@ -2,6 +2,10 @@ const connection = require('./');
 
 var PlaceC = connection.loadSchema('place', {
   fields:{
+      id:{
+        type: 'uuid', 
+        default: {'$db_function':'uuid()'}
+      },
       name: "varchar",
       reviews: "int",
       rating: "int",
@@ -11,7 +15,7 @@ var PlaceC = connection.loadSchema('place', {
       city: "varchar",
       image: "varchar"
   },
-  key:["name"]
+  key:["id"]
 });
 
 PlaceC.syncDB(function(err, result) {
