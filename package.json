@@ -6,6 +6,7 @@
   "scripts": {
     "start": "nodemon ./server",
     "build": "webpack -w",
+    "build-docker": "webpack",
     "seed": "node ./seedData",
     "test-jest": "jest",
     "docker":"node ./server"

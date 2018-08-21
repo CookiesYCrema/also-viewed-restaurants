@@ -1,11 +1,13 @@
-FROM node:8
+FROM node:carbon
 
-COPY . /also-view-restaurants-postgres
+WORKDIR /
 
-WORKDIR /also-view-restaurants-postgres
+COPY package*.json ./
+COPY . .
 
 RUN npm install
+RUN npm run build-docker
 
 EXPOSE 3000
 
-CMD ["npm", "run", "docker"],["npm","run","build"]
+CMD ["npm", "run", "docker"]

@@ -44,7 +44,6 @@ const controller = {
         }
       })
       .then(place => {
-        console.log(place.length)
         if(place.length !== 0) {
           res.status(202).send({place});
         } else {

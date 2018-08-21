@@ -18,9 +18,7 @@ export default class PlaceList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      restaurant: 'Starbucks',
       mainCategory: 'qui',
-      subCategories: 'Cafe',
       city: 'Boehmland',
       places: []
     };
@@ -28,15 +26,13 @@ export default class PlaceList extends Component {
   
   componentDidMount () {
     this.getRestaurants();
-    // console.log('component mounted!');
   }
 
   getRestaurants () {
     let { mainCategory } = this.state;
     let { city } = this.state;
-    axios.get(`http://localhost:3000/api/also-viewed/${mainCategory}/${city}`/*, payload*/)
+    axios.get(`http://localhost:3000/api/also-viewed/${mainCategory}/${city}`)
     .then(res => {
-      console.log(res.data)
       if (res.data.length) {
         this.setState({places: res.data.slice(0, 10)});
       } else {
