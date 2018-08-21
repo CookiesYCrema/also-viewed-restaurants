@@ -31,7 +31,7 @@ export default class PlaceList extends Component {
   getRestaurants () {
     let { mainCategory } = this.state;
     let { city } = this.state;
-    axios.get(`http://localhost:3000/api/also-viewed/${mainCategory}/${city}`)
+    axios.get(`http://192.168.99.100:3000/api/also-viewed/${mainCategory}/${city}`)
     .then(res => {
       if (res.data.length) {
         this.setState({places: res.data.slice(0, 10)});

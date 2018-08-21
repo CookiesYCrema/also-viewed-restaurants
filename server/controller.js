@@ -59,7 +59,6 @@ const controller = {
 
   mainCategoryCity: {
     get: (req, res) => {
-      console.log('here:', req.params)
       Place.findAll({
         where: { 
           mainCategory: req.params.mainCategory,
@@ -68,7 +67,7 @@ const controller = {
         limit: 10
       })
       .then(places => {
-        console.log(places)
+        // console.log('Getting place:', place)
         res.status(200).send(places);
       })
       .catch(error => {
@@ -89,7 +88,7 @@ const controller = {
         image: req.body.image
       })
       .then((place) => {
-        console.log('Creating place:', place)
+        // console.log('Creating place:', place)
         res.status(201).send({id: place.id});
       })
       .catch(error => {
