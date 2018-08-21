@@ -60,7 +60,7 @@ const controller = {
 
   mainCategoryCity: {
     get: (req, res) => {
-      console.log(req.params)
+      console.log('here:', req.params)
       Place.findAll({
         where: { 
           mainCategory: req.params.mainCategory,
@@ -69,6 +69,7 @@ const controller = {
         limit: 10
       })
       .then(places => {
+        console.log(places)
         res.status(200).send(places);
       })
       .catch(error => {

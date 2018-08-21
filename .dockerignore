@@ -1,0 +1,18 @@
+# Developer Notes
+NOTES.md
+
+# Jest Testing (incomplete)
+test/
+
+# Airbnb Javascript Styling (unsure how to implement)
+javascript/
+
+# Dev Dependencies
+node_modules/
+
+#VSCODE
+.vscode
+
+#DATA SEED
+*.csv
+package-lock.json

@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const controller = require('./controller.js');
 
-router.route('/also-viewed/:id')
+router.route('/also-viewed-id/:id')
 .get(controller.id.get)
 .delete(controller.id.delete)
 .put(controller.id.put);

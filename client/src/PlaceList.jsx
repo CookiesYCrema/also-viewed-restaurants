@@ -19,9 +19,9 @@ export default class PlaceList extends Component {
     super(props);
     this.state = {
       restaurant: 'Starbucks',
-      mainCategory: 'et',
+      mainCategory: 'qui',
       subCategories: 'Cafe',
-      city: 'Los Angeles',
+      city: 'Boehmland',
       places: []
     };
   }
@@ -31,29 +31,16 @@ export default class PlaceList extends Component {
     // console.log('component mounted!');
   }
 
-  createData () {
-    for (let e = 0; e < 100; e++) {
-      axios.post('/api/also-viewed', {e: e})
-      .then(() => console.log('created data #: ', e))
-      .catch(err => console.log('error creating data: ', err));
-    }
-  }
-
   getRestaurants () {
-    const { mainCategory } = this.state;
-    let payload = {
-      params: {
-        mainCategory: mainCategory
-      }
-    }
-    axios.get('http://localhost:3000/api/also-viewed', payload)
+    let { mainCategory } = this.state;
+    let { city } = this.state;
+    axios.get(`http://localhost:3000/api/also-viewed/${mainCategory}/${city}`/*, payload*/)
     .then(res => {
+      console.log(res.data)
       if (res.data.length) {
-        console.log('hi')
         this.setState({places: res.data.slice(0, 10)});
       } else {
         console.log('No data');
-        //this.createData();
       }
     })
     .catch(err => console.log('error sending get request to server: ', err));
