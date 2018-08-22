@@ -17,3 +17,7 @@ client/dist/bundle.js
 #DATA SEED
 *.csv
 package-lock.json
+*.log
+
+#NEW RELIC
+/newrelic.js

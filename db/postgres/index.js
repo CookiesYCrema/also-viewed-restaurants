@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
 
-// const connection = new Sequelize('alsoviewed', 'mario', 'bar', {
-const connection = new Sequelize('alsoviewed', 'postgres', 'example', {
-  host: 'db',
+const connection = new Sequelize('alsoviewed', 'mario', 'bar', {
+// const connection = new Sequelize('alsoviewed', 'postgres', 'example', {
   dialect: 'postgres',
+  // host: 'db',
   logging: false
 });
 
