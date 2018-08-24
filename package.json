@@ -5,6 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./server",
+    "index": "node ./server",
+    "index1": "node ./server/index1.js",
+    "index2": "node ./server/index2.js",
+    "index3": "node ./server/index3.js",
+    "index4": "node ./server/index4.js",
     "build": "webpack -w",
     "build-docker": "webpack",
     "seed": "node ./seedData",
@@ -24,6 +29,7 @@
   "homepage": "https://github.com/targaryen-yelp/qa-sidebar#readme",
   "dependencies": {
     "airbnb-browser-shims": "^3.0.0",
+    "artillery": "^1.6.0-22",
     "axios": "^0.18.0",
     "babel-core": "^6.26.3",
     "babel-jest": "^23.4.2",
@@ -44,6 +50,7 @@
     "image-webpack-loader": "^4.3.1",
     "jest": "^23.4.1",
     "mongoose": "^5.2.6",
+    "morgan": "^1.9.0",
     "newrelic": "^4.8.0",
     "pg": "^7.4.3",
     "react": "^16.4.1",

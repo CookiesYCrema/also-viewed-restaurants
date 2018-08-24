@@ -22,3 +22,7 @@ package-lock.json
 #NEW RELIC
 /newrelic.js
 /post-benchmark.txt
+/server/index1.js
+/server/index2.js
+/server/index3.js
+/server/index4.js
