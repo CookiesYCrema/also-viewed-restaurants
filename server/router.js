@@ -8,6 +8,8 @@ router.route('/also-viewed-id/:id')
 
 router.route('/also-viewed/:mainCategory?/:city?')
 .get(controller.mainCategoryCity.get)
+
+router.route('/also-viewed-post/')
 .post(controller.mainCategoryCity.post);
 
 module.exports = router;

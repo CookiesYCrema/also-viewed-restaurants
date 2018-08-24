@@ -2,8 +2,9 @@ const Sequelize = require('sequelize');
 
 const connection = new Sequelize('alsoviewed', 'mario', 'bar', {
 // const connection = new Sequelize('alsoviewed', 'postgres', 'example', {
+  host: 'localhost',  
+// host: 'db',
   dialect: 'postgres',
-  // host: 'db',
   logging: false
 });
 
